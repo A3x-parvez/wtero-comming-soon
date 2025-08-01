@@ -30,41 +30,76 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="text-center py-24 px-6 bg-gradient-to-t from-gray-900/20 via-transparent to-black">
-      <img src="/public/wtero_main.png" alt="WTERO Logo" class="h-24 mx-auto mb-4">
-      <h1 class="text-6xl font-extrabold text-purple-400 drop-shadow-lg mb-4 animate-pulse">WTERO is Coming Soon!</h1>
-      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-6">
-        We’re launching our futuristic digital solution hub for businesses, startups, and freelancers. Be among the first to experience the AI-powered evolution.
-      </p>
-      <p class="text-md text-gray-400">
-        Contact us early at <a href="mailto:contact@wtero.com" class="text-purple-300 underline">contact@wtero.com</a>
-      </p>
-    </section>
+<section class="text-center py-24 px-6 bg-gradient-to-t from-gray-900/20 via-transparent to-black rounded-xl">
+  <img src="/public/wtero_main.png" alt="WTERO Logo" class="h-24 mx-auto mb-4">
+  <h1 class="text-6xl font-extrabold text-purple-400 drop-shadow-lg mb-4 animate-pulse">WTERO is Coming Soon!</h1>
+  <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-6">
+    We’re launching our futuristic digital solution hub for businesses, startups, and freelancers. Be among the first to experience the AI-powered evolution.
+  </p>
+  <a href="#contact" class="inline-block mt-4 px-6 py-2 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition">
+    Contact Us Early
+  </a>
+</section>
 
-    <!-- Vision & Mission Section -->
-    <section id="vision" class="py-16 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-semibold text-purple-300 text-center mb-12">🚀 Vision & Mission</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="glass p-6 rounded-xl shadow-md">
-        <div class="flex items-center gap-3 mb-4">
-            <img src="https://cdn.jsdelivr.net/gh/lucide-icons/lucide/icons/rocket.svg" class="w-5 h-5 text-purple-400" alt="Vision Icon">
-            <h3 class="text-2xl font-bold text-purple-400 italic">Our Vision</h3>
-        </div>
-        <p class="text-gray-300 italic">
-            To become the leading digital launchpad for small businesses and freelancers by merging human-centered design with AI-driven technologies — enabling every entrepreneur to grow with confidence, speed, and innovation.
-        </p>
-        </div>
-        <div class="glass p-6 rounded-xl shadow-md">
-        <div class="flex items-center gap-3 mb-4">
-            <img src="https://cdn.jsdelivr.net/gh/lucide-icons/lucide/icons/target.svg" class="w-5 h-5 text-purple-400" alt="Mission Icon">
-            <h3 class="text-2xl font-bold text-purple-400 italic">Our Mission</h3>
-        </div>
-        <p class="text-gray-300 italic">
-            At WTERO, our mission is to simplify and accelerate the online journey of businesses by delivering futuristic websites, automated customer handling tools, powerful insights, and smart marketing strategies — all powered by accessible technology and personalized support.
-        </p>
-        </div>
+
+
+    <!-- Loading Screen -->
+<div id="loading-screen" class="fixed inset-0 bg-black flex flex-col items-center justify-center z-50 transition-opacity duration-1000">
+  <img src="/public/wtero_main.png" alt="WTERO Logo" class="h-24 mb-4 opacity-0 animate-fade-in">
+  <h1 class="text-2xl font-bold text-purple-400 mb-2 opacity-0 animate-fade-in delay-200">WTERO</h1>
+  <p class="text-sm text-gray-400 italic opacity-0 animate-fade-in delay-400">Your dream, our code</p>
+</div>
+
+<!-- Vision & Mission Section -->
+<section id="vision" class="py-16 px-6 max-w-5xl mx-auto">
+  <h2 class="text-3xl font-semibold text-purple-300 text-center mb-12">Vision & Mission</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="glass p-6 rounded-xl shadow-md">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="https://cdn.jsdelivr.net/gh/lucide-icons/lucide/icons/rocket.svg" class="w-5 h-5 text-purple-400" alt="Vision Icon">
+        <h3 class="text-2xl font-bold text-purple-400 italic">Our Vision</h3>
+      </div>
+      <p class="text-gray-300 italic">
+        To become the leading digital launchpad for small businesses and freelancers by merging human-centered design with AI-driven technologies — enabling every entrepreneur to grow with confidence, speed, and innovation.
+      </p>
     </div>
-    </section>
+    <div class="glass p-6 rounded-xl shadow-md">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="https://cdn.jsdelivr.net/gh/lucide-icons/lucide/icons/target.svg" class="w-5 h-5 text-purple-400" alt="Mission Icon">
+        <h3 class="text-2xl font-bold text-purple-400 italic">Our Mission</h3>
+      </div>
+      <p class="text-gray-300 italic">
+        At WTERO, our mission is to simplify and accelerate the online journey of businesses by delivering futuristic websites, automated customer handling tools, powerful insights, and smart marketing strategies — all powered by accessible technology and personalized support.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+</style>
+
+<script>
+  window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    setTimeout(() => {
+      loadingScreen.classList.add('opacity-0');
+      setTimeout(() => loadingScreen.remove(), 1000);
+    }, 1800);
+  });
+</script>
 
 
     <!-- Services Section -->

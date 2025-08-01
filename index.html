@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WTERO | Coming Soon</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="/assets/wtero_main.png" />
+    <link rel="icon" href="/public/wtero_main.png" />
     <style>
       .glass {
         background: rgba(255, 255, 255, 0.05);
@@ -15,63 +15,85 @@
     </style>
   </head>
   <body class="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen font-sans">
-    <!-- Header -->
-    <header class="flex items-center justify-between px-6 py-4 border-b border-purple-700">
-      <img src="/assets/wtero_main.png" alt="WTERO Logo" class="h-12">
-      <span class="text-sm text-purple-400 font-medium">Launching 2025 🚀</span>
-    </header>
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between px-6 py-4 border-b border-purple-700 bg-black/30 backdrop-blur sticky top-0 z-50">
+      <div class="flex items-center gap-4">
+        <img src="/public/wtero_main.png" alt="WTERO Logo" class="h-10">
+        <span class="text-lg font-semibold text-purple-400">WTERO</span>
+      </div>
+      <div class="hidden md:flex gap-6 text-sm">
+        <a href="#services" class="hover:text-purple-300">Services</a>
+        <a href="#vision" class="hover:text-purple-300">Vision</a>
+        <a href="#social" class="hover:text-purple-300">Social</a>
+        <a href="#contact" class="hover:text-purple-300">Contact</a>
+      </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="text-center py-20 px-6">
-      <img src="/assets/wtero_main.png" alt="WTERO Logo" class="h-24 mx-auto mb-4">
-      <h1 class="text-5xl sm:text-6xl font-bold text-purple-400 mb-4">WTERO is Coming Soon!</h1>
-      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-        We're building a futuristic digital hub for small businesses, freelancers, and startups. Our official website is launching very soon.
-        Want early access or services before launch? Reach us at <a href="mailto:contact@wtero.com" class="text-purple-300 underline">contact@wtero.com</a>
+    <section class="text-center py-24 px-6 bg-gradient-to-t from-gray-900/20 via-transparent to-black">
+      <img src="/public/wtero_main.png" alt="WTERO Logo" class="h-24 mx-auto mb-4">
+      <h1 class="text-6xl font-extrabold text-purple-400 drop-shadow-lg mb-4 animate-pulse">WTERO is Coming Soon!</h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-6">
+        We’re launching our futuristic digital solution hub for businesses, startups, and freelancers. Be among the first to experience the AI-powered evolution.
+      </p>
+      <p class="text-md text-gray-400">
+        Contact us early at <a href="mailto:contact@wtero.com" class="text-purple-300 underline">contact@wtero.com</a>
+      </p>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision" class="py-16 px-6 max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold text-purple-300 mb-6">🌟 Our Vision</h2>
+      <p class="text-gray-300 mb-10">
+        To become the go-to digital partner for small businesses and startups by making technology and AI tools accessible, affordable, and human-centered.
+      </p>
+      <h3 class="text-2xl font-semibold text-purple-300 mb-4">🎯 Our Mission</h3>
+      <p class="text-gray-300">
+        Empower businesses through smart websites, AI-powered automation, personalized marketing tools, and ongoing digital support — helping them grow faster, smarter, and affordably.
       </p>
     </section>
 
     <!-- Services Section -->
-    <section class="py-16 px-6 max-w-5xl mx-auto">
+    <section id="services" class="py-16 px-6 max-w-5xl mx-auto">
       <h2 class="text-3xl font-semibold text-purple-300 text-center mb-12">✨ What We Offer</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="glass p-6 rounded-xl shadow-md">
           <h3 class="text-xl font-bold text-purple-400 mb-2">Custom Websites</h3>
-          <p class="text-gray-300">Mobile-first static or dynamic websites built for speed, SEO, and growth. Includes WhatsApp chat, contact forms, and analytics-ready setup.</p>
+          <p class="text-gray-300">Mobile-first static/dynamic websites with SEO, analytics, WhatsApp chat, and modern UI.</p>
         </div>
         <div class="glass p-6 rounded-xl shadow-md">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Google Business Profile</h3>
-          <p class="text-gray-300">Verified listings with address, hours, location, reviews, photos & visibility setup on Google Maps and Search.</p>
+          <h3 class="text-xl font-bold text-purple-400 mb-2">Google Business Setup</h3>
+          <p class="text-gray-300">Get your business verified on Google with maps, hours, photos, and location.</p>
         </div>
         <div class="glass p-6 rounded-xl shadow-md">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">WhatsApp Ordering System</h3>
-          <p class="text-gray-300">One-click inquiry, product listing integration, order flows, and automated response system.</p>
+          <h3 class="text-xl font-bold text-purple-400 mb-2">WhatsApp Ordering</h3>
+          <p class="text-gray-300">One-click product inquiry with auto-replies for instant customer support.</p>
         </div>
         <div class="glass p-6 rounded-xl shadow-md">
           <h3 class="text-xl font-bold text-purple-400 mb-2">AI Chatbots</h3>
-          <p class="text-gray-300">Smart 24/7 chat assistants tailored to your brand, for handling inquiries, booking requests, and FAQs with ease.</p>
+          <p class="text-gray-300">Smart AI bots trained on your business tone to handle 24/7 customer queries.</p>
         </div>
         <div class="glass p-6 rounded-xl shadow-md">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Business & Marketing Analysis</h3>
-          <p class="text-gray-300">Detailed growth analysis, performance audits, trend tracking, customer segmentation & insights.</p>
+          <h3 class="text-xl font-bold text-purple-400 mb-2">Business & Marketing Insights</h3>
+          <p class="text-gray-300">Performance audits, customer analysis, and growth strategy suggestions.</p>
         </div>
         <div class="glass p-6 rounded-xl shadow-md">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Automation with AI</h3>
-          <p class="text-gray-300">Automate tasks like appointment booking, reminders, and follow-ups via integrations with CRM, Notion, Google Sheets, and WhatsApp.</p>
+          <h3 class="text-xl font-bold text-purple-400 mb-2">AI-Powered Automation</h3>
+          <p class="text-gray-300">Automate follow-ups, bookings, and tasks via CRM, Notion, Google Sheets & WhatsApp.</p>
         </div>
         <div class="glass p-6 rounded-xl shadow-md">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Social Media Starter Kit</h3>
-          <p class="text-gray-300">Complete setup of Instagram & Facebook business pages, ready-to-use templates, brand highlight covers, hashtag strategy & captions.</p>
+          <h3 class="text-xl font-bold text-purple-400 mb-2">Social Media Kit</h3>
+          <p class="text-gray-300">IG/FB business setup with content templates, highlights, captions, and hashtags.</p>
         </div>
         <div class="glass p-6 rounded-xl shadow-md">
-          <h3 class="text-xl font-bold text-purple-400 mb-2">Ongoing Digital Support</h3>
-          <p class="text-gray-300">We’ll assist you with hosting, domain, emails, technical help, and monthly maintenance as your digital partner.</p>
+          <h3 class="text-xl font-bold text-purple-400 mb-2">Digital Support</h3>
+          <p class="text-gray-300">Help with hosting, domains, email setup, and ongoing monthly maintenance.</p>
         </div>
       </div>
     </section>
 
     <!-- Social Section -->
-    <section class="py-16 px-6 text-center">
+    <section id="social" class="py-16 px-6 text-center">
       <h3 class="text-2xl font-semibold text-purple-300 mb-6">📲 Join Us</h3>
       <p class="text-gray-400 mb-4">Follow us for updates, tools, offers and feature launches</p>
       <div class="flex flex-wrap justify-center gap-4 text-sm">
@@ -81,6 +103,49 @@
         <a href="https://facebook.com/wtero" class="px-4 py-2 bg-blue-800 rounded hover:bg-blue-900">Facebook</a>
         <a href="https://linkedin.com/company/wtero" class="px-4 py-2 bg-blue-400 rounded hover:bg-blue-500">LinkedIn</a>
       </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 px-6 max-w-2xl mx-auto text-center">
+      <h3 class="text-2xl font-semibold text-purple-300 mb-4">📬 Contact Us</h3>
+      <p class="text-gray-400 mb-6">Want something early? Leave your details and message below.</p>
+      <form id="contact-form" class="glass p-6 rounded-xl shadow-md">
+        <input type="text" name="name" required placeholder="Your name" class="w-full px-4 py-2 mb-4 rounded bg-gray-800 text-white placeholder-gray-400">
+        <input type="email" name="email" required placeholder="Your email" class="w-full px-4 py-2 mb-4 rounded bg-gray-800 text-white placeholder-gray-400">
+        <input type="text" name="subject" required placeholder="Subject" class="w-full px-4 py-2 mb-4 rounded bg-gray-800 text-white placeholder-gray-400">
+        <input type="text" name="service" placeholder="Interested service (optional)" class="w-full px-4 py-2 mb-4 rounded bg-gray-800 text-white placeholder-gray-400">
+        <textarea name="message" required placeholder="Your message..." rows="4" class="w-full px-4 py-2 mb-4 rounded bg-gray-800 text-white placeholder-gray-400"></textarea>
+        <button type="submit" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded text-white font-semibold">Send Message</button>
+        <p id="form-response" class="text-green-400 text-sm mt-4 hidden">✅ Message sent successfully!</p>
+      </form>
+      <script>
+        const form = document.getElementById('contact-form');
+        const responseMsg = document.getElementById('form-response');
+
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+          const formObject = Object.fromEntries(formData.entries());
+
+          try {
+            await fetch('https://formsubmit.co/ajax/contact@wtero.com', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify(formObject)
+            });
+
+            form.reset();
+            responseMsg.classList.remove('hidden');
+            setTimeout(() => responseMsg.classList.add('hidden'), 4000);
+          } catch (error) {
+            alert('❌ Something went wrong. Try again.');
+          }
+        });
+      </script>
     </section>
 
     <!-- Footer -->

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
+  <!-- <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WTERO | Coming Soon</title>
@@ -13,7 +13,56 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
     </style>
-    </head>
+    </head> -->
+    <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WTERO | Coming Soon</title>
+
+  <!-- Tailwind CSS (optional) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon: MUST be root-relative (no `public/` prefix!) -->
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="public/assets/wtero_main_icon.ico"
+  />
+
+  <!-- Optional PNG fallback (e.g. for some devices) -->
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="48x48"
+    href="public/assets/wtero_main.png"
+  />
+
+  <!-- Organization structured data (logo visible in Google Search & Knowledge Panel) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WTERO",
+      "url": "https://www.wtero.com/",
+      "logo": "https://www.wtero.com/public/assets/wtero_main.png",
+      "sameAs": [
+        "https://whatsapp.com/channel/0029Vb6tHAc0wajyJV4Wfu1s",
+        "https://t.me/wtero_tech",
+        "https://instagram.com/wtero_tech",
+        "https://www.facebook.com/share/1DjPgVpjGy/",
+        "https://linkedin.com/company/wtero"
+      ]
+    }
+  </script>
+
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
     <body class="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen font-sans">
       <!-- Navbar -->
       <nav class="flex items-center justify-between px-6 py-3 border-b border-purple-700 bg-purple-900/50 backdrop-blur sticky top-0 z-50">
@@ -29,8 +78,6 @@
           <a href="#contact" class="hover:text-purple-300">Contact</a>
         </div>
       </nav>
-
-
 
     <!-- Hero Section -->
     <section id="home" class="text-center py-24 px-6 bg-gradient-to-t from-gray-900/20 via-transparent to-black rounded-xl">
@@ -192,7 +239,7 @@
             </a>
 
             <!-- Telegram -->
-            <a href="https://t.me/wtero" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 text-white">
+            <a href="https://t.me/wtero_tech" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 text-white">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9.999 15.169L9.7 19.369c.569 0 .814-.245 1.113-.543l2.665-2.522 5.52 4.023c1.012.559 1.735.265 1.983-.937L23.99 2.738c.341-1.367-.52-1.913-1.392-1.601L1.208 9.654C-.12 10.198-.104 11 .977 11.34l5.914 1.846L18.78 5.12c.402-.253.764-.115.464.139z"/></svg>
               Telegram
             </a>

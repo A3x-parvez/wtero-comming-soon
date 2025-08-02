@@ -1,0 +1,1 @@
+hello this is from public/assets/test.txt file

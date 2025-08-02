@@ -64,20 +64,111 @@
   </style>
 </head>
     <body class="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen font-sans">
-      <!-- Navbar -->
-      <nav class="flex items-center justify-between px-6 py-3 border-b border-purple-700 bg-purple-900/50 backdrop-blur sticky top-0 z-50">
-        <div class="flex items-center gap-4">
-          <img src="public/assets/wtero_main.png" alt="WTERO Logo" class="h-10">
-          <span class="text-xl font-semibold text-purple-400">WTERO</span>
-        </div>
-        <div class="hidden md:flex gap-6 text-sm">
-          <a href="#home" class="hover:text-purple-300">Home</a>
-          <a href="#services" class="hover:text-purple-300">Services</a>
-          <a href="#vision" class="hover:text-purple-300">Vision</a>
-          <a href="#social" class="hover:text-purple-300">Social</a>
-          <a href="#contact" class="hover:text-purple-300">Contact</a>
-        </div>
-      </nav>
+    <!-- Navigation Bar -->
+
+<nav class="relative sticky top-0 z-50 bg-black/30 backdrop-blur border-b border-purple-700">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+    <a href="#home" class="flex items-center gap-3">
+      <img src="public/assets/wtero_main.png" alt="WTERO Logo" class="h-10" />
+      <span class="text-xl font-semibold text-purple-400">WTERO</span>
+    </a>
+
+    <button id="nav-toggle" class="md:hidden text-purple-400 focus:outline-none" aria-label="Toggle menu">
+      <svg class="w-6 h-6 transition-transform transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menu-icon" d="M4 8h16M4 16h16" stroke-linecap="round" stroke-width="2" />
+        <path id="close-icon" class="hidden" d="M6 6l12 12M6 18L18 6" stroke-linecap="round" stroke-width="2" />
+      </svg>
+    </button>
+
+    <div id="nav-desktop" class="hidden md:flex items-center gap-8 text-purple-300 text-sm">
+      <a href="#home" class="nav-item-desktop hover:text-purple-200">Home</a>
+      <a href="#services" class="nav-item-desktop hover:text-purple-200">Services</a>
+      <a href="#vision" class="nav-item-desktop hover:text-purple-200">Vision</a>
+      <a href="#social" class="nav-item-desktop hover:text-purple-200">Social</a>
+      <a href="#contact" class="nav-item-desktop hover:text-purple-200">Contact</a>
+    </div>
+  </div>
+
+  <div id="nav-mobile-menu" class="hidden md:hidden fixed inset-x-0 top-[3rem] h-[calc(100vh-3rem)] z-40 overflow-y-auto bg-black/60 backdrop-blur-sm">
+  <div class="flex flex-col space-y-5 px-6 pt-6 pb-safe-bottom">
+    <a href="#home" class="nav-item-mobile text-purple-200 hover:text-white block">Home</a>
+    <a href="#services" class="nav-item-mobile text-purple-200 hover:text-white block">Services</a>
+    <a href="#vision" class="nav-item-mobile text-purple-200 hover:text-white block">Vision</a>
+    <a href="#social" class="nav-item-mobile text-purple-200 hover:text-white block">Social</a>
+    <a href="#contact" class="nav-item-mobile text-purple-200 hover:text-white block">Contact</a>
+  </div>
+</div>
+</nav>
+
+<script>
+  (() => {
+    const toggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('nav-mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    // Toggles the mobile menu and body scroll lock
+    const toggleMobileMenu = (isOpen) => {
+      mobileMenu.classList.toggle('hidden', !isOpen);
+      menuIcon.classList.toggle('hidden', isOpen);
+      closeIcon.classList.toggle('hidden', !isOpen);
+      document.body.classList.toggle('overflow-hidden', isOpen);
+    };
+
+    // Close mobile menu when a link is clicked
+    const handleLinkClick = () => {
+      toggleMobileMenu(false);
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('hidden');
+      toggleMobileMenu(isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', handleLinkClick);
+    });
+
+    // IntersectionObserver for active link styling
+    const sections = document.querySelectorAll('section');
+    const navItemsDesktop = document.querySelectorAll('.nav-item-desktop');
+    const navItemsMobile = document.querySelectorAll('.nav-item-mobile');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          const currentLink = document.querySelector(`.nav-item-desktop[href="#${sectionId}"]`);
+          const currentMobileLink = document.querySelector(`.nav-item-mobile[href="#${sectionId}"]`);
+
+          // Clear active styles
+          navItemsDesktop.forEach(item => item.classList.remove('text-purple-200', 'underline'));
+          navItemsMobile.forEach(item => item.classList.remove('text-white', 'font-bold'));
+
+          // Add active styles
+          if (currentLink) {
+            currentLink.classList.add('text-purple-200', 'underline');
+          }
+          if (currentMobileLink) {
+            currentMobileLink.classList.add('text-white', 'font-bold');
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe each section
+    sections.forEach(section => {
+      navObserver.observe(section);
+    });
+  })();
+</script>
+
 
     <!-- Hero Section -->
     <section id="home" class="text-center py-24 px-6 bg-gradient-to-t from-gray-900/20 via-transparent to-black rounded-xl">
